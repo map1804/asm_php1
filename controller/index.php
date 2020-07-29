@@ -21,14 +21,14 @@
         switch ($page) {
             case 'product':
                 // load data cho trang sp
-                // if (isset($_GET['id_catagory'])&&($_GET['id_catagory']>0)) {
-                //     $iddm=$_GET['id_catagory'];
-                // }else{
-                //     $iddm=0;
-                // }
-                // $dssp = showsp($iddm);
+                if (isset($_GET['id_danhmuc'])&&($_GET['id_danhmuc']>0)) {
+                    $iddm=$_GET['id_danhmuc'];
+                }else{
+                    $iddm=0;
+                }
+                $dssp = showsp($iddm);
                 // show dssp
-                include_once "../view/product.php";
+                include_once "../view/chitiet.php";
                 break;
             case 'khuyenmai':
                 include_once "../view/khuyenmai.php";
@@ -39,8 +39,8 @@
             case 'sanphammoi':
                 include_once "../view/sanphammoi.php";
                 break;
-            case 'danhmuc':
-                include_once "../view/danhmuc.php";
+            case 'chitiet_sp':
+                include_once "../view/chitiet_sp.php";
                 break;
             default:
                 include_once "../view/home.php";

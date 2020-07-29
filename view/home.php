@@ -37,7 +37,7 @@
                         <div class="card">
                             <img class="card-img-top" src="../view/img/hinh1.webp" alt="Card image cap">
                             <div class="card-body">
-                                <a href="index.php?page=product">
+                                <a href="#">
                                     <p class="card-text">Bộ Sản Phẩm Làm Sạch & Phấn Nước Trang Điểm DR.BELMEUR ADVANCED
                                         CICA
                                     </p>
@@ -109,7 +109,7 @@
                             $tendanhmuc = $tungdanhmuccon['name'];
                             // $slugdm = to_slug($tendanhmuc);
                             // $link = "index.php?page=danhmuc&idcatalog=".$slugdm;
-                            $link = "index.php?page=danhmuc&idcatalog=".$tungdanhmuccon['id_type'];
+                            $link = "index.php?page=chitiet_sp&idcatalog=".$tungdanhmuccon['id_type'];
                             echo '<a class="nav-link" href="'.$link.'">'.$tendanhmuc.'</a>';
                         }
                     ?>
