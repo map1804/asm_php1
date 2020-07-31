@@ -90,10 +90,10 @@
                     </div>
                 </div>
                 <nav class="row nav">
-                    <a class="nav-link active title py-2 " href="#">DƯỠNG DA</a>
+                    <a class="nav-link active title py-2 " href="index.php?page=collection&duong-da">DƯỠNG DA</a>
                     <?php
                         // $tungdanhmuccon biến để lưu từng phần tử trong mảng
-                        //dsdanhmuc = [tungdanhmuccon,tungdanhmuccon,tungdanhmuccon]
+                        // dsdanhmuc = [tungdanhmuccon,tungdanhmuccon,tungdanhmuccon]
                         // array = [object,object,object] => array[0] sẽ in duoc object 
                         // object = {doituong1,doituong2,doituong3} => object['doituong1']
                         
@@ -103,8 +103,6 @@
                         //     {2, "Nước cân bằng"} ,
                         //     {3, "Tinh chất"}
                         // ]
- 
-
                         foreach($dsdanhmuc as $tungdanhmuccon) {
                             $tendanhmuc = $tungdanhmuccon['name'];
                             // $slugdm = to_slug($tendanhmuc);
@@ -113,47 +111,53 @@
                             echo '<a class="nav-link" href="'.$link.'">'.$tendanhmuc.'</a>';
                         }
                     ?>
-                    <!-- <a class="nav-link" href="#">Các sản phẩm</a>
-                    <a class="nav-link" href="#">Nước cân bằng</a>
-                    <a class="nav-link" href="#">Tinh chất</a>
-                    <a class="nav-link" href="#">Kem dưỡng</a>
-                    <a class="nav-link" href="#">Kem chống nắng</a> -->
                 </nav>
                 <div class="row">
                     <div class="col-2"></div>
-                    <div class="col-10">
+                    <div class="col-12">
                         <div class="box1">
-                            <img src="../view/img/duongda-1.webp" alt="">
+                            <img src="https://www.kosmebox.com/image/data/Homebanner/16-31Jan2019/TFS1200x400.jpg" alt="">
                         </div>
-                        <div class="box2">
-                            <div class="col-4">
-                                <div class="card">
-                                    <img class="card-img-top" src="../view/img/hinh6.webp" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text">Bộ Sản Phẩm Dưỡng Ẩm, Làm Sáng Da</p>
-                                        <p class="card-gia">400.000đ</p>
+                        <div class="container">
+                            <?php
+                            foreach ($danhsach_catagory as $sanpham_theo_cata) {
+                            $id = $sanpham_theo_cata['id_product'];
+                            $name = $sanpham_theo_cata['name'];
+                            $img = $sanpham_theo_cata['img'];
+                            $price = $sanpham_theo_cata['price'];
+                            $id_catagory = $sanpham_theo_cata['id_catagory'];
+                            if($id_catagory == 1) {
+                                echo '<div class="col5 mar-2 mt-5">
+                                    <div class="card">
+                                        <img class="card-img-top" src="../view/img/' . $img . '" alt="Card image cap">
+                                        <div class="card-body">
+                                            <a href="index.php?page=chitiet_sp&id_product=' . $id . '">
+                                                <p class="card-text">' . $name . '</p>
+                                            </a>
+                                            <p class="card-gia">' . $price . 'đ</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="card">
-                                    <img class="card-img-top" src="../view/img/hinh7.webp" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text">Bộ Sản Phẩm Dưỡng Ẩm Phục Hồi Da </p>
-                                        <p class="card-gia">400.000đ</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="card">
-                                    <img class="card-img-top" src="../view/img/hinh8.webp" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text">Bộ Sản Phẩm Dưỡng Ẩm, Phục Hồi Da </p>
-                                        <p class="card-gia">400.000đ</p>
-                                    </div>
-                                </div>
-                            </div>
+                                </div>';
+                            } 
+                        ?>
+                        
+                    </div>
+                </div>
+                <nav class="row nav mt-5">
+                    <a class="nav-link active title py-2 " href="index.php?page=collection&id_catagory">DƯỠNG DA</a>
+                    <a class="nav-link" href="#">Các sản phẩm</a>
+                    <a class="nav-link" href="#">Sữa rửa mặt</a>
+                    <a class="nav-link" href="#">Dầu tẩy trang</a>
+                    <a class="nav-link" href="#">Kem tẩy trang</a>
+                    <a class="nav-link" href="#">Mặt nạ kì</a>
+                </nav>
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-12">
+                        <div class="box1">
+                            <img src="https://vn.stylekorean.com/data/promotion/promo_mobile_banner_50.jpg" alt="">
                         </div>
+                        
                         <div class="box-full mt-2">
                             <div class="col5 mar-2">
                                 <div class="card">
@@ -214,43 +218,15 @@
                 </nav>
                 <div class="row">
                     <div class="col-2"></div>
-                    <div class="col-10">
+                    <div class="col-12">
                         <div class="box1">
-                            <img src="../view/img/dasach.webp" alt="">
+                            <img src="https://file.hstatic.net/1000036599/collection/bannerlamsach.jpg" alt="">
                         </div>
-                        <div class="box2">
-                            <div class="col-4">
-                                <div class="card">
-                                    <img class="card-img-top" src="../view/img/hinh19.webp" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build</p>
-                                        <p class="card-gia">400.000đ</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="card">
-                                    <img class="card-img-top" src="../view/img/hinh20.webp" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build</p>
-                                        <p class="card-gia">400.000đ</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="card">
-                                    <img class="card-img-top" src="../view/img/hinh21.webp" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build</p>
-                                        <p class="card-gia">400.000đ</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <div class="box-full mt-2">
                             <div class="col5 mar-2">
                                 <div class="card">
-                                    <img class="card-img-top" src="../view/img/hinh14.webp" alt="Card image cap">
+                                    <img class="card-img-top" src="../view/img/hinh9.webp" alt="Card image cap">
                                     <div class="card-body">
                                         <p class="card-text">Bộ Sản Phẩm Cấp Ẩm Chuyên Sâu, Làm Dịu</p>
                                         <p class="card-gia">400.000đ</p>
@@ -259,7 +235,7 @@
                             </div>
                             <div class="col5 mar-2">
                                 <div class="card">
-                                    <img class="card-img-top" src="../view/img/hinh15.webp" alt="Card image cap">
+                                    <img class="card-img-top" src="../view/img/hinh10.webp" alt="Card image cap">
                                     <div class="card-body">
                                         <p class="card-text">Bộ Sản Phẩm Dưỡng Ẩm, Phục Hồi Da</p>
                                         <p class="card-gia">400.000đ</p>
@@ -268,7 +244,7 @@
                             </div>
                             <div class="col5 mar-2">
                                 <div class="card">
-                                    <img class="card-img-top" src="../view/img/hinh16.webp" alt="Card image cap">
+                                    <img class="card-img-top" src="../view/img/hinh11.webp" alt="Card image cap">
                                     <div class="card-body">
                                         <p class="card-text">Bộ Sản Phẩm Cấp Ẩm Chuyên Sâu, Làm Dịu</p>
                                         <p class="card-gia">400.000đ</p>
@@ -277,7 +253,7 @@
                             </div>
                             <div class="col5 mar-2">
                                 <div class="card">
-                                    <img class="card-img-top" src="../view/img/hinh17.webp" alt="Card image cap">
+                                    <img class="card-img-top" src="../view/img/hinh12.webp" alt="Card image cap">
                                     <div class="card-body">
                                         <p class="card-text">Bộ Sản Phẩm Dưỡng Ẩm, Phục Hồi Da DR.</p>
                                         <p class="card-gia">400.000đ</p>
@@ -286,102 +262,9 @@
                             </div>
                             <div class="col5">
                                 <div class="card">
-                                    <img class="card-img-top" src="../view/img/hinh18.webp" alt="Card image cap">
+                                    <img class="card-img-top" src="../view/img/hinh13.webp" alt="Card image cap">
                                     <div class="card-body">
                                         <p class="card-text">Bộ Sản Phẩm Tăng Cường Ẩm, Săn Chắc</p>
-                                        <p class="card-gia">400.000đ</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <nav class="row nav mt-5">
-                    <a class="nav-link active title py-2 " href="#">DƯỠNG DA</a>
-                    <a class="nav-link" href="#">Các sản phẩm</a>
-                    <a class="nav-link" href="#">Sữa rửa mặt</a>
-                    <a class="nav-link" href="#">Dầu tẩy trang</a>
-                    <a class="nav-link" href="#">Kem tẩy trang</a>
-                    <a class="nav-link" href="#">Mặt nạ kì</a>
-                </nav>
-                <div class="row">
-                    <div class="col-2"></div>
-                    <div class="col-10">
-                        <div class="box1">
-                            <img src="../view/img/dasach.webp" alt="">
-                        </div>
-                        <div class="box2">
-                            <div class="col-4">
-                                <div class="card">
-                                    <img class="card-img-top" src="../view/img/hinh19.webp" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build</p>
-                                        <p class="card-gia">400.000đ</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="card">
-                                    <img class="card-img-top" src="../view/img/hinh20.webp" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build</p>
-                                        <p class="card-gia">400.000đ</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="card">
-                                    <img class="card-img-top" src="../view/img/hinh21.webp" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build</p>
-                                        <p class="card-gia">400.000đ</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box-full mt-2">
-                            <div class="col5 mar-2">
-                                <div class="card">
-                                    <img class="card-img-top" src="../view/img/hinh14.webp" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text">Bộ Sản Phẩm Cấp Ẩm Chuyên Sâu, Làm Dịu Da</p>
-                                        <p class="card-gia">400.000đ</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col5 mar-2">
-                                <div class="card">
-                                    <img class="card-img-top" src="../view/img/hinh15.webp" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text">Bộ Sản Phẩm Dưỡng Ẩm, Phục Hồi Da</p>
-                                        <p class="card-gia">400.000đ</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col5 mar-2">
-                                <div class="card">
-                                    <img class="card-img-top" src="../view/img/hinh16.webp" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text">Bộ Sản Phẩm Cấp Ẩm Chuyên Sâu, Làm Dịu Da</p>
-                                        <p class="card-gia">400.000đ</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col5 mar-2">
-                                <div class="card">
-                                    <img class="card-img-top" src="../view/img/hinh17.webp" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text">Bộ Sản Phẩm Dưỡng Ẩm, Phục Hồi Da DR.</p>
-                                        <p class="card-gia">400.000đ</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col5">
-                                <div class="card">
-                                    <img class="card-img-top" src="../view/img/hinh18.webp" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text">Bộ Sản Phẩm Tăng Cường Ẩm, Săn Chắc Da</p>
                                         <p class="card-gia">400.000đ</p>
                                     </div>
                                 </div>

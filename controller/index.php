@@ -12,6 +12,8 @@
     // show danh mục(category)
     $dsdanhmuc = danhsachcacdanhmuc();
 
+    $danhsach_catagory = showsp_catagory();
+
     include_once "../view/header.php";
 
     if (isset($_GET['page'])) {
@@ -60,6 +62,7 @@
     }
     else{
         include_once "../view/home.php";
+        
     }
     
     include_once "../view/footer.php";
