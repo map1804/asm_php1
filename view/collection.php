@@ -5,7 +5,7 @@
                     $id = $spcon['id_product'];
                     $name = $spcon['name'];
                     $img = $spcon['img'];
-                    $description = $spcon['description'];
+                    $price = $spcon['price'];
                     echo '<div class="col5 mar-2">
                         <div class="card">
                             <img class="card-img-top" src="../view/img/'.$img.'" alt="Card image cap">
@@ -13,7 +13,7 @@
                             <a href="index.php?page=chitiet_sp&id_product='.$id.'">
                                 <p class="card-text">'.$name.'</p>
                             </a>
-                                <p class="card-gia">400.000đ</p>
+                                <p class="card-gia">'.$price.'đ</p>
                             </div>
                         </div>
                     </div>';

@@ -7,6 +7,8 @@
                 <?php
                     foreach ($chitietsanpham as $chitiet) {
                         $img = $chitiet['img'];
+                        $name = $chitiet['name'];
+                        $price = $chitiet['price'];
 
                         echo '<div class="col-6">
                                 <div class="col-2 img-left">
@@ -18,10 +20,10 @@
                             </div>
                             <div class="col-6">
                                 <div class="title-product mb-4">
-                                    <h5>Bộ Sản Phẩm Kem Nền Lâu Trôi Chống Nắng INK LASTING FOUNDATION SLIM FIT EX #V103</h5>
+                                    <h5>'.$name.'</h5>
                                 </div>
                                 <div class="price-product">
-                                    <p>635,000₫<span>1,380,000₫</span></p>
+                                    <p>'.$price.'<span>1,380,000₫</span></p>
                                 </div>
                                 <div class="mt-3 ml-2">
                                     <p>Dòng sản phẩm </p>
