@@ -1,4 +1,12 @@
 <?php 
+    function themloaisp($name){
+        $sql = "INSERT INTO type (name)
+                VALUES ('$name')";
+        // use exec() because no results are returned
+        $conn = connect();
+        $conn->exec($sql);
+    }
+
     function danhsachcacdanhmuc(){
         $sql = "select * from type order by id_type asc";
         $conn = connect();

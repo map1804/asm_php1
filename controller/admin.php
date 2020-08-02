@@ -5,6 +5,7 @@
     include_once "../model/collection.php";
 
     // load data cho trang chủ
+    connect();
 
     include "../view/admin/header.php";
 
@@ -12,7 +13,17 @@
         $page = $_GET['page'];
         switch ($page) {
             case 'qlloaisp':
-                $qlloaisp = danhsachcacdanhmuc();
+                // insert 
+                if (isset($_POST['themloai'])&&($_POST['themloai'])) {
+                    $name = $_POST['name'];
+                    themloaisp($name);
+                }
+                // delete
+
+                // edit
+
+                // show list
+                $qlloaisp = danhsachcacdanhmuc(0);
                 include "../view/admin/qlloaisp.php";
                 break;
             

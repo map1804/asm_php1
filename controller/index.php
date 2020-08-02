@@ -1,17 +1,16 @@
 <?php
     include "../model/connect.php";
     include_once "../model/product.php";
-    include_once "../model/brand.php";
-    include_once "../model/cart.php";
     include_once "../model/type.php";
     include_once "../model/collection.php";
 
     // loaddata cho trang chủ
     connect();
 
-    // show danh mục(category)
+    // show loại sản phẩm
     $dsdanhmuc = danhsachcacdanhmuc();
 
+    // show danh mục(category)
     $danhsach_catagory = showsp_catagory();
 
     include_once "../view/header.php";
