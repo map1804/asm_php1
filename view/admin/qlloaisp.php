@@ -42,7 +42,7 @@
             foreach ($qlloaisp as $loaisp) {
                 $id = $loaisp['id_type'];
                 $name = $loaisp['name'];
-                $linkedit = "admin.php?page=qlloaisp&idedit=".$id;
+                $linkedit = "admin.php?page=qlloaisp&idedit=".$id;  
                 $linkdelete = "admin.php?page=qlloaisp&iddelete=".$id;
                 echo '<tr>
                         <td>'.$id.'</td>

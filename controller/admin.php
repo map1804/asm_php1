@@ -33,18 +33,18 @@ if (isset($_GET['page']) && ($_GET['page'])) {
             }
 
             // edit
-                // load lại loại sp
+            // load lại loại sp
             if (isset($_GET['idedit']) && ($_GET['idedit'])) {
                 $id = $_GET['idedit'];
                 // load dữ liệu với id
                 $infoloaisp = getinfoloaisp($id);
-            }   
-                // cập nhật 
+            }
+            // cập nhật 
             if (isset($_POST['updateloaisp']) && ($_POST['updateloaisp'])) {
                 $id = $_POST['id_type'];
-                $name =$_POST['name'];
-                
-                editloaisp($id,$name);
+                $name = $_POST['name'];
+
+                editloaisp($id, $name);
             }
             // show list
             $qlloaisp = danhsachcacdanhmuc(0);
@@ -68,12 +68,21 @@ if (isset($_GET['page']) && ($_GET['page'])) {
                 $price = $_POST['price'];
 
 
-                themsp($name, $img, $type, $price,$catagory); //khúc này làm hàm func_get_args
+                themsp($name, $img, $type, $price, $catagory); //khúc này làm hàm func_get_args
 
 
             }
             // delete
+            if (isset($_GET['iddelete']) && ($_GET['iddelete']) > 0) {
+                $id = $_GET['iddelete'];
+                // kiểm tra hca này có con ko
+                // if không có thì xóa
 
+                // if có con thì ko cho xóa hoặc cảnh báo là có con, xóa cha là xóa con
+                // $ds = danhsachcacdanhmuc(0);
+
+                xoasp($id);
+            }
             // edit
 
             // show list

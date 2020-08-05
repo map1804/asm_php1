@@ -5,6 +5,12 @@
         $conn = connect();
         $conn->exec($sql);
     }
+
+    function xoasp($id){
+        $sql = "delete from product where id_product=".$id; 
+        $conn = connect();
+        $conn->exec($sql);
+    }
     //show chi tiết sản phẩm
     function show_chitietsp($id_product){
         $conn = connect();
