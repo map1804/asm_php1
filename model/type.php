@@ -1,6 +1,42 @@
 <?php 
-    function danhsachcacdanhmuc(){
-        $sql = "select * from type order by id_type asc";
+    function themloaisp($name){
+        $sql = "INSERT INTO type (name)
+                VALUES ('$name')";
+        $conn = connect();
+        $conn->exec($sql);
+    }
+
+    function xoaloaisp($id){
+        $sql = "delete from type where id_type=".$id; 
+        $conn = connect();
+        $conn->exec($sql);
+    }
+    
+    // lấy loại sp 
+    function getinfoloaisp($id){
+        $sql = "select * from type where id_type=".$id; 
+        $conn = connect();
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        // set the resulting array to associative
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        return $stmt->fetch();
+    }
+    function editloaisp($id,$name){
+        $sql = "update type set name='$name' where id_type=".$id;
+        $conn = connect();
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+    }
+    function danhsachcacdanhmuc($home){
+        // order by id_type asc
+        $sql = "select * from type where 1";
+        if ($home == 1) {
+            $sql.=" order by id_type asc";
+        }else{
+            $sql.=" order by id_type desc";
+        }
+
         $conn = connect();
         $stmt = $conn->prepare($sql);
         $stmt->execute();
@@ -22,4 +58,3 @@
     //     $str = preg_replace('/([\s]+)/', '-', $str);
     //     return $str;
     // }
-?> 

@@ -14,7 +14,21 @@
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         return $stmt->fetchAll();
     }
+    function showcatagory(){
+        $sql = "select * from catagory where 1 order by id_catagory desc";
+        // if ($home == 1) {
+        //     $sql.=" order by id_type asc";
+        // }else{
+        //     $sql.=" order by id_type desc";
+        // }
 
+        $conn = connect();
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        // set the resulting array to associative
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll();
+    }
     function showsp_catagory(){
         $conn = connect();
         $sql = "select * from product where 1 ORDER BY id_catagory desc limit 10";

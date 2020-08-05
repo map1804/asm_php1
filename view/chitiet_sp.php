@@ -1,29 +1,27 @@
-
-
     <!-- Start product -->
     <section>
         <div class="container">
             <div class="row product">
                 <?php
-                    foreach ($chitietsanpham as $chitiet) {
-                        $img = $chitiet['img'];
-                        $name = $chitiet['name'];
-                        $price = $chitiet['price'];
+                foreach ($chitietsanpham as $chitiet) {
+                    $img = $chitiet['img'];
+                    $name = $chitiet['name'];
+                    $price = $chitiet['price'];
 
-                        echo '<div class="col-6">
+                    echo '<div class="col-6">
                                 <div class="col-2 img-left">
-                                    <img src="../view/img/'.$img.'" alt="">
+                                    <img src="../view/img/' . $img . '" alt="">
                                 </div>
                                 <div class="col-10 img-right">
-                                    <img src="../view/img/'.$img.'" alt="">
+                                    <img src="../view/img/' . $img . '" alt="">
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="title-product mb-4">
-                                    <h5>'.$name.'</h5>
+                                    <h5>' . $name . '</h5>
                                 </div>
                                 <div class="price-product">
-                                    <p>'.$price.'<span>1,380,000₫</span></p>
+                                    <p>' . $price . '<span>1,380,000₫</span></p>
                                 </div>
                                 <div class="mt-3 ml-2">
                                     <p>Dòng sản phẩm </p>
@@ -56,9 +54,9 @@
                                     </div>
                                 </div>
                             </div>';
-                    }
+                }
                 ?>
-                
+
             </div>
         </div>
     </section>

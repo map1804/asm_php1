@@ -1,4 +1,10 @@
 <?php
+    function themsp($name,$img,$type,$price,$catagory){
+        $sql = "INSERT INTO product (name,img,id_type,price,id_catagory)
+                VALUES ('$name','$img','$type','$price','$catagory')";
+        $conn = connect();
+        $conn->exec($sql);
+    }
     //show chi tiết sản phẩm
     function show_chitietsp($id_product){
         $conn = connect();
