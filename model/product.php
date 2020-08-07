@@ -11,6 +11,21 @@
         $conn = connect();
         $conn->exec($sql);
     }
+
+    function getinfosp($id){
+        $sql = "select * from product where id_product=".$id; 
+        $conn = connect();
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        // set the resulting array to associative
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        return $stmt->fetch();
+    }
+
+    function editsp($id){
+
+    }
+    
     //show chi tiết sản phẩm
     function show_chitietsp($id_product){
         $conn = connect();

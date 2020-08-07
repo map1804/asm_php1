@@ -26,7 +26,7 @@ if (isset($_GET['page']) && ($_GET['page'])) {
                 // kiểm tra hca này có con ko
                 // if không có thì xóa
 
-                // if có con thì ko cho xóa hoặc cảnh báo là có con, xóa cha là xóa con
+                // if có con thì ko chogetinfoloaisp xóa hoặc cảnh báo là có con, xóa cha là xóa con
                 // $ds = danhsachcacdanhmuc(0);
 
                 xoaloaisp($id);
@@ -83,8 +83,20 @@ if (isset($_GET['page']) && ($_GET['page'])) {
 
                 xoasp($id);
             }
-            // edit
 
+            // load dữ liệu với id
+            if (isset($_GET['idedit']) && ($_GET['idedit']>0)) {
+                $id = $_GET['idedit'];
+                $infosp = getinfosp($id);
+            }
+            // cập nhật 
+            // if (isset($_POST['updateloaisp']) && ($_POST['updateloaisp'])) {
+            //     $id = $_POST['id_type'];
+            //     $name = $_POST['name'];
+
+            //     editloaisp($id, $name);
+            // }
+             
             // show list
             $dstype = danhsachcacdanhmuc(0);
             $dsdm = showcatagory(0);
