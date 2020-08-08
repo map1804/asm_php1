@@ -1,3 +1,23 @@
+<?php
+    session_start();
+    include "../model/connect.php";
+    include "../model/user.php";
+    if (isset($_POST['login'])&&($_POST['login'])) {
+        $user = $_POST['user'];
+        $pass = $_POST['pass'];
+
+        $checkuser = checkuser($user,$pass);
+
+        if($checkuser){
+            if($checkuser['role']==1) header('location: admin.php');
+            else header('location: index.php');
+        }else{
+            $canhbao = "Bạn không có tài khoản";
+            // hacker à mơ đi bé :v
+        }
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,10 +45,10 @@
                 <div class="row textcenter">
                     <p class="text-dn">ĐĂNG NHẬP</p>
                 </div>
-                <input type="email" name="user" id="" placeholder="Email">
-                <input type="password" name="pass" id="" placeholder="Mật khẩu">
+                <input type="text" name="user" id="" placeholder="Tài khoản" autofocus>
+                <input type="password" name="pass" id="" placeholder="Mật khẩu" autofocus>
                 <div class="dangnhap">
-                    <input type="submit_dangnhap" value="ĐĂNG NHẬP">
+                    <input type="submit" value="ĐĂNG NHẬP" name="login">
                 </div>
                 <ul class="dk">
                     <li><a href="#">Đăng nhập</a></li>
@@ -37,6 +57,11 @@
             </div>
         </div>
     </form>
+    <?php 
+        if(isset($canhbao)&& ($canhbao != "")){
+            echo $canhbao;
+        }
+    ?>
 
 </body>
 
