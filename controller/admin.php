@@ -87,36 +87,37 @@ include_once "../model/collection.php";
                 }
 
                 // load dữ liệu với id
-                if (isset($_GET['idedit']) && ($_GET['idedit'] > 0)) {
+                if (isset($_GET['idedit']) && ($_GET['idedit']) > 0) {
                     $id = $_GET['idedit'];
                     $infosp = infosp($id);
                 }
                 // cập nhật  
-                if (isset($_POST['updateloaisp']) && ($_POST['updateloaisp']>0)) {
+                if (isset($_POST['suasanpham']) && ($_POST['suasanpham'])) {
                     $id = $_POST['id'];
                     $name = $_POST['name'];
                     $type = $_POST['type'];
                     if ($_FILES['img']['name']!="") {
                         $img = $_FILES['img']['name'];
-                    $target_file = "../view/img/" . basename($img);
-                    if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
-                        $err_upload = 'Upload thành công';
-                    } else {
-                        $err_upload = '';
+                        $target_file = "../view/img/" . basename($img);
+                        if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
+                            $err_upload = 'Upload thành công';
+                        } else {
+                            $err_upload = '';
+                        }
+                    }else{
+                        $img="";
                     }
-                }else{
-                    $img="";
-                }
-                    
                     $catagory = $_POST['catagory'];
                     $price = $_POST['price'];
 
                     // cập nhật
-                    editsp($id, $name, $img, $type, $price, $catagory);
+                    $suasp = editsp($id, $name, $img, $type, $price, $catagory);
+                    
                 }
-
+                
                 // show list
                 $dstype = danhsachcacdanhmuc(0);
+                // var_dump($dstype);
                 $dsdm = showcatagory(0);
                 $dssp = show_chitietsp(0);
 

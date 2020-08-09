@@ -20,7 +20,7 @@
                     <select name="type" > 
                         <?php
                         foreach ($dstype as $type) {
-                            if($infosp['iddm']==$type['id']){
+                            if($infosp['id_type']==$type['id_type']){
                                 $s1 = "selected";
                             }else{
                                 $s1 = "";
@@ -33,7 +33,7 @@
                     <select name="catagory">
                         <?php
                         foreach ($dsdm as $dm) {
-                            if($infosp['iddm']==$dm['id']){
+                            if($infosp['id_catagory']==$dm['id_catagory']){
                                 $s1 = "selected";
                             }else{
                                 $s1 = "";
@@ -43,8 +43,8 @@
                         ?>
                     </select>
                     <input type="hidden" value="<?php echo $rand; ?>" name="randcheck" />
-                    <input type="hidden" name="id" value="<?=$infosp['id']?>">
-                    <input type="submit" value="Edit" name="editsp">
+                    <input type="hidden" name="id" value="<?=$infosp['id_product']?>">
+                    <input type="submit" value="Edit" name="suasanpham">
                 </form>
         </div>
     <?php } else { ?>

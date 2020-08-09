@@ -29,7 +29,7 @@
         }else{
             $sql = "update product set name='$name',id_type='$type',price='$price',id_catagory='$catagory' where id_product=".$id;
         }
-        
+
         $conn = connect();
         $stmt = $conn->prepare($sql);
         $stmt->execute();
