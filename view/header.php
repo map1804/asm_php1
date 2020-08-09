@@ -17,8 +17,8 @@
 </head>
 
 <body>
-   <!-- Start header  -->
-   <header>
+    <!-- Start header  -->
+    <header>
         <div class="container-fluid bgg">
             <div class="container">
                 <div class="row">
@@ -30,20 +30,32 @@
                     <div class="boxMid">
                         <form action="#" method="post">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Bạn cần tìm gì?..."
-                                    aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <input type="text" class="form-control" placeholder="Bạn cần tìm gì?..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                                 <div class="input-group-append">
                                     <button class="btn btn-outline-secondary" type="button">Tìm kiếm</button>
                                 </div>
                             </div>
                         </form>
                     </div>
-                    <div class="boxRight mt-2">
-                        <ul>
-                            <li><a href="#">Đăng nhập</a></li>
-                            <li><a href="dangki.html">Đăng kí</a></li>
-                        </ul>
-                    </div>
+                    <?php
+                    if (isset($_SESSION['sid']) && ($_SESSION['sid']) > 0) {
+                    ?>
+                        <div class="boxRight logout mt-2">
+                            <ul>
+                                <li><a href="index.php?act=user&logout=1">Thoát</a></li>
+                                <li><a href="dangki.html"><?=$_SESSION['suser']?></a></li>
+                            </ul>
+                        </div>
+                    <?php
+                    } else {
+                    ?>
+                        <div class="boxRight login mt-2">
+                            <ul>
+                                <li><a href="index.php?page=dangnhap">Đăng nhập</a></li>
+                                <li><a href="index.php?page=dangki">Đăng kí</a></li>
+                            </ul>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -56,8 +68,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active mr-2">
-                                <a class="nav-link homePage" href="#">Trang chủ <span
-                                        class="sr-only">(current)</span></a>
+                                <a class="nav-link homePage" href="#">Trang chủ <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <div class="dropdown buttonPage">
@@ -104,7 +115,3 @@
         </div>
     </header>
     <!-- Finish header -->
-
-
-    
-    

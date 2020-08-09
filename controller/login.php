@@ -9,6 +9,8 @@
         $checkuser = checkuser($user,$pass);
 
         if(is_array($checkuser)){
+            $_SESSION['sid']=$checkuser['id'];
+            $_SESSION['suser']=$checkuser['user'];
             if($checkuser['role']==1) header('location: admin.php');
             else header('location: index.php');
         }else{

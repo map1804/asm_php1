@@ -54,6 +54,18 @@
                 $chitietsanpham = show_chitietsp($id_sanpham);
                 include_once "../view/chitiet_sp.php";
                 break;
+            case 'user':
+                // đăng ký
+
+                // đăng nhập
+
+                // thoát
+                if (isset($_GET['logout'])&&($_GET['logout']==1)) {
+                    unset($_SESSION['sid']); 
+                    unset($_SESSION['suser']);
+                    header('location: index.php'); 
+                }
+                break;  
             default:
                 include_once "../view/home.php";
                 break;

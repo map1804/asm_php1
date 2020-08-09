@@ -20,5 +20,6 @@
             <li><a href="admin.php?page=qldm">Quản lí danh mục</a></li>
             <li><a href="admin.php?page=qlloaisp">Quản lí loại sản phẩm</a></li>
             <li><a href="admin.php?page=qlsp">Quản lí sản phẩm</a></li>
+            <li><a href="admin.php?page=user&logout=1">Logout</a></li>
         </ul>
     </aside>

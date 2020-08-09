@@ -6,9 +6,9 @@ include_once "../model/type.php";
 include_once "../model/collection.php";
 
 // load data cho trang chủ
-// connect();
+connect();
 
-// if (isset($_SESSION['sid']) && ($_SESSION['sid'] > 0)) {
+if (isset($_SESSION['sid']) && ($_SESSION['sid'] > 0)) {
 
     include "../view/admin/header.php";
 
@@ -123,6 +123,18 @@ include_once "../model/collection.php";
 
                 include "../view/admin/qlsanpham.php";
                 break;
+            case 'user':
+                // đăng ký
+
+                // đăng nhập
+
+                // thoát
+                if (isset($_GET['logout'])&&($_GET['logout']==1)) {
+                    unset($_SESSION['sid']); 
+                    unset($_SESSION['suser']);
+                    header('location: index.php'); 
+                }
+                break;  
             default:
                 include "../view/admin/home.php";
                 break;
@@ -132,6 +144,6 @@ include_once "../model/collection.php";
     }
 
     include "../view/admin/footer.php";
-// } else {
-//     // header('location: login.php');
-// }
+} else {
+    header('location: login.php');
+}
