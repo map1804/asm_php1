@@ -42,8 +42,8 @@
                     ?>
                         <div class="boxRight logout mt-2">
                             <ul>
-                                <li><a href="index.php?act=user&logout=1">Thoát</a></li>
-                                <li><a href="dangki.html"><?=$_SESSION['suser']?></a></li>
+                                <li><a href="index.php?page=userinfo"><?=$_SESSION['suser']?></a></li>
+                                <li><a href="index.php?page=user&logout=1">Thoát</a></li>
                             </ul>
                         </div>
                     <?php
@@ -51,7 +51,7 @@
                     ?>
                         <div class="boxRight login mt-2">
                             <ul>
-                                <li><a href="index.php?page=dangnhap">Đăng nhập</a></li>
+                                <li><a href="index.php?page=user">Đăng nhập</a></li>
                                 <li><a href="index.php?page=dangki">Đăng kí</a></li>
                             </ul>
                         </div>

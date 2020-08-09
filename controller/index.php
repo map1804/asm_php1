@@ -1,8 +1,10 @@
 <?php
+    session_start();
     include "../model/connect.php";
     include_once "../model/product.php";
     include_once "../model/type.php";
     include_once "../model/collection.php";
+    include_once "../model/user.php";
 
     // loaddata cho trang chủ
     connect();
@@ -58,13 +60,25 @@
                 // đăng ký
 
                 // đăng nhập
-
+                if (isset($_POST['dangnhap'])&&($_POST['dangnhap'])) {
+                    $user=$_POST['user'];
+                    $pass=$_POST['pass'];
+                    $checkuser = checkuser($user, $pass);
+                    if ($checkuser) {
+                        $_SESSION['sid']= $checkuser['id'];
+                        $_SESSION['suser']= $checkuser['suser'];
+                        header('location: index.php?page=userinfo');
+                    }else{
+                        $login_err_user = 'Tài khoản hoặc mật khẩu không trùng khớp';
+                    }
+                }
                 // thoát
                 if (isset($_GET['logout'])&&($_GET['logout']==1)) {
                     unset($_SESSION['sid']); 
                     unset($_SESSION['suser']);
                     header('location: index.php'); 
                 }
+                include "../view/dangnhap.php";
                 break;  
             default:
                 include_once "../view/home.php";
