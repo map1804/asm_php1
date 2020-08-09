@@ -8,7 +8,7 @@ include_once "../model/collection.php";
 // load data cho trang chủ
 // connect();
 
-if (isset($_SESSION['sid']) && ($_SESSION['sid'] > 0)) {
+// if (isset($_SESSION['sid']) && ($_SESSION['sid'] > 0)) {
 
     include "../view/admin/header.php";
 
@@ -89,15 +89,31 @@ if (isset($_SESSION['sid']) && ($_SESSION['sid'] > 0)) {
                 // load dữ liệu với id
                 if (isset($_GET['idedit']) && ($_GET['idedit'] > 0)) {
                     $id = $_GET['idedit'];
-                    $infosp = getinfosp($id);
+                    $infosp = infosp($id);
                 }
-                // cập nhật 
-                // if (isset($_POST['updateloaisp']) && ($_POST['updateloaisp'])) {
-                //     $id = $_POST['id_type'];
-                //     $name = $_POST['name'];
+                // cập nhật  
+                if (isset($_POST['updateloaisp']) && ($_POST['updateloaisp']>0)) {
+                    $id = $_POST['id'];
+                    $name = $_POST['name'];
+                    $type = $_POST['type'];
+                    if ($_FILES['img']['name']!="") {
+                        $img = $_FILES['img']['name'];
+                    $target_file = "../view/img/" . basename($img);
+                    if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
+                        $err_upload = 'Upload thành công';
+                    } else {
+                        $err_upload = '';
+                    }
+                }else{
+                    $img="";
+                }
+                    
+                    $catagory = $_POST['catagory'];
+                    $price = $_POST['price'];
 
-                //     editloaisp($id, $name);
-                // }
+                    // cập nhật
+                    editsp($id, $name, $img, $type, $price, $catagory);
+                }
 
                 // show list
                 $dstype = danhsachcacdanhmuc(0);
@@ -115,7 +131,6 @@ if (isset($_SESSION['sid']) && ($_SESSION['sid'] > 0)) {
     }
 
     include "../view/admin/footer.php";
-} else {
-    header('location: login.php');
-}
-?>
+// } else {
+//     // header('location: login.php');
+// }

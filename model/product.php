@@ -12,7 +12,7 @@
         $conn->exec($sql);
     }
 
-    function getinfosp($id){
+    function infosp($id){
         $sql = "select * from product where id_product=".$id; 
         $conn = connect();
         $stmt = $conn->prepare($sql);
@@ -22,8 +22,17 @@
         return $stmt->fetch();
     }
 
-    function editsp($id){
-
+    // cập nhật sản phẩm
+    function editsp($id, $name, $img, $type, $price, $catagory){
+        if ($img!="") {
+            $sql = "update product set name='$name',img='$img',id_type='$type',price='$price',id_catagory='$catagory' where id_product=".$id;
+        }else{
+            $sql = "update product set name='$name',id_type='$type',price='$price',id_catagory='$catagory' where id_product=".$id;
+        }
+        
+        $conn = connect();
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
     }
     
     //show chi tiết sản phẩm

@@ -193,7 +193,7 @@
           </div>
         </div>
         <nav class="row nav mt-5">
-          <a class="nav-link active title py-2 " href="index.php?page=collection&id_catagory">DƯỠNG DA</a>
+          <a class="nav-link active title py-2 " href="index.php?page=collection&id_catagory">TRANG ĐIỂM NỀN</a>
           <?php
             foreach ($dsdanhmuc as $tungdanhmuccon) {
               $tendanhmuc = $tungdanhmuccon['name'];

@@ -7,7 +7,7 @@
       $img = $spcon['img'];
       $price = $spcon['price'];
       $id_catagory = $spcon['id_catagory'];
-      echo '<div class="col5 mar-2">
+      echo '<div class="col-3 mt-4">
                     <div class="card">
                         <img class="card-img-top" src="../view/img/' . $img . '" alt="Card image cap">
                         <div class="card-body">

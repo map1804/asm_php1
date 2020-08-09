@@ -3,7 +3,11 @@
         <div class="row">
             <?php
             if (isset($_GET['idedit']) && ($_GET['idedit']>0)) {
+                $img = '../view/img/'.$infosp['img'].'' ;
+                if(is_file($img)){
 
+                    $img = '<img src="'.$img.'" alt="" style="width: 100px">';
+                }
             ?>
                 <?php
                 $rand = rand();
@@ -11,23 +15,35 @@
                 ?>
                 <form action="admin.php?page=qlsp" method="post" enctype="multipart/form-data">
                     <input type="text" name="name" id="" value="<?=$infosp['name'] ?>">
-                    <input type="file" name="img" id="" value="<?=$infosp['img'] ?>">
+                    <input type="file" name="img" id="" value="">
+                    <?=$img?>
                     <select name="type" > 
                         <?php
                         foreach ($dstype as $type) {
-                            echo '<option value="' . $type['id_type'] . '">' . $type['name'] . '</option>';
+                            if($infosp['iddm']==$type['id']){
+                                $s1 = "selected";
+                            }else{
+                                $s1 = "";
+                            }
+                            echo '<option value="' . $type['id_type'] . '" '.$s1.'>' . $type['name'] . '</option>';
                         }
                         ?>
                     </select>
-                    <input type="text" name="price" id="" placeholder="Giá" value="<?=$infosp['price'] ?>">
+                    <input type="text" name="price" id="" placeholder="Giá" value="<?=$infosp['price']?>">
                     <select name="catagory">
                         <?php
                         foreach ($dsdm as $dm) {
-                            echo '<option value="' . $dm['id_catagory'] . '">' . $dm['name'] . '</option>';
+                            if($infosp['iddm']==$dm['id']){
+                                $s1 = "selected";
+                            }else{
+                                $s1 = "";
+                            }
+                            echo '<option value="' . $dm['id_catagory'] . '" '.$s1.'>' . $dm['name'] . '</option>';
                         }
                         ?>
                     </select>
                     <input type="hidden" value="<?php echo $rand; ?>" name="randcheck" />
+                    <input type="hidden" name="id" value="<?=$infosp['id']?>">
                     <input type="submit" value="Edit" name="editsp">
                 </form>
         </div>

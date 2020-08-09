@@ -2,13 +2,13 @@
     session_start();
     include "../model/connect.php";
     include "../model/user.php";
-    if (isset($_POST['login'])&&($_POST['login'])) {
+    if (isset($_POST['dangnhap'])&&($_POST['dangnhap'])) {
         $user = $_POST['user'];
         $pass = $_POST['pass'];
 
         $checkuser = checkuser($user,$pass);
 
-        if($checkuser){
+        if(is_array($checkuser)){
             if($checkuser['role']==1) header('location: admin.php');
             else header('location: index.php');
         }else{
@@ -48,7 +48,7 @@
                 <input type="text" name="user" id="" placeholder="Tài khoản" autofocus>
                 <input type="password" name="pass" id="" placeholder="Mật khẩu" autofocus>
                 <div class="dangnhap">
-                    <input type="submit" value="ĐĂNG NHẬP" name="login">
+                    <input type="submit" value="ĐĂNG NHẬP" name="dangnhap">
                 </div>
                 <ul class="dk">
                     <li><a href="#">Đăng nhập</a></li>
