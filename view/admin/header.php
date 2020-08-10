@@ -8,11 +8,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../view/css/bootstrap.min.css">
     
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="../view/admin/css/admin.css">
 </head>
 <body>
     <header>
-        <h1>Admin Control</h1>
+        <h1 class="mt-5">Admin Control</h1>
     </header>
     <aside>
         <ul>

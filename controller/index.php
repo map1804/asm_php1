@@ -1,5 +1,6 @@
 <?php
     session_start();
+    ob_start();
     include "../model/connect.php";
     include_once "../model/product.php";
     include_once "../model/type.php";
@@ -66,7 +67,7 @@
                     $checkuser = checkuser($user, $pass);
                     if ($checkuser) {
                         $_SESSION['sid']= $checkuser['id'];
-                        $_SESSION['suser']= $checkuser['suser'];
+                        $_SESSION['suser']= $checkuser['user'];
                         header('location: index.php?page=userinfo');
                     }else{
                         $login_err_user = 'Tài khoản hoặc mật khẩu không trùng khớp';
