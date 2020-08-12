@@ -33,11 +33,11 @@
         <h2>INK LASTING - MUA 1 TẶNG 1</h2>
       </div>
       <div class="row mb-5 mt-2">
-        <div class="col5 mar-2">
+        <div class="col-3">
           <div class="card">
             <img class="card-img-top" src="../view/img/hinh1.webp" alt="Card image cap">
             <div class="card-body">
-              <a href="index.php?page=chitiet_sp&id_product=1">
+              <a href="index.php?page=chitiet_sp&id_product=39">
                 <p class="card-text">Bộ Sản Phẩm Làm Sạch & Phấn Nước Trang Điểm DR.BELMEUR ADVANCED
                   CICA
                 </p>
@@ -46,38 +46,48 @@
             </div>
           </div>
         </div>
-        <div class="col5 mar-2">
+        <div class="col-3">
           <div class="card">
             <img class="card-img-top" src="../view/img/hinh2.webp" alt="Card image cap">
             <div class="card-body">
-              <p class="card-text">Bộ Sản Phẩm Dành Cho Da Dầu Mụn DR.BELMEUR (CLARIFYING + FACE MILD)
-              </p>
+            <a href="index.php?page=chitiet_sp&id_product=38">
+                <p class="card-text">Bộ Sản Phẩm Dành Cho Da Dầu Mụn DR.BELMEUR (CLARIFYING + FACE MILD)
+                </p>
+              </a>
               <p class="card-gia">400.000đ</p>
             </div>
           </div>
         </div>
-        <div class="col5 mar-2">
+        <div class="col-3">
           <div class="card">
             <img class="card-img-top" src="../view/img/hinh3.webp" alt="Card image cap">
             <div class="card-body">
-              <p class="card-text">Kem Nền Đa Năng INK LASTING FOUNDATION SLIM FIT SPF30 PA++ 30ML
+            <a href="index.php?page=chitiet_sp&id_product=5">
+                <p class="card-text">Kem Nền Đa Năng INK LASTING FOUNDATION SLIM FIT SPF30 PA++ 30ML
                 CICA
-              </p>
+                </p>
+              </a>
+              <!-- <p class="card-text">Kem Nền Đa Năng INK LASTING FOUNDATION SLIM FIT SPF30 PA++ 30ML
+                CICA
+              </p> -->
               <p class="card-gia">400.000đ</p>
             </div>
           </div>
         </div>
-        <div class="col5 mar-2">
+        <div class="col-3">
           <div class="card">
             <img class="card-img-top" src="../view/img/hinh4.webp" alt="Card image cap">
             <div class="card-body">
-              <p class="card-text">[FMGT] Kem Nền Lâu Trôi Chống Nắng INK LASTING FOUNDATION SLIM FIT
-                EX</p>
+            <a href="index.php?page=chitiet_sp&id_product=42">
+                <p class="card-text">Kem Nền Lâu Trôi Chống Nắng INK LASTING FOUNDATION SLIM FIT
+                EX CICA
+                </p>
+              </a>
               <p class="card-gia">400.000đ</p>
             </div>
           </div>
         </div>
-        <div class="col5">
+        <!-- <div class="col5">
           <div class="card">
             <img class="card-img-top" src="../view/img/hinh5.webp" alt="Card image cap">
             <div class="card-body">
@@ -87,7 +97,7 @@
               <p class="card-gia">400.000đ</p>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <nav class="row nav">
         <a class="nav-link active title py-2 " href="index.php?page=collection&duong-da">DƯỠNG DA</a>
@@ -115,10 +125,9 @@
       <div class="row">
         <div class="col-2"></div>
         <div class="col-12">
-          <div class="box1">
+          <div class="box1 bia">
             <img src="https://www.kosmebox.com/image/data/Homebanner/16-31Jan2019/TFS1200x400.jpg" alt="">
           </div>
-          <div class="container">
             <?php
             foreach ($danhsach_catagory as $sanpham_theo_cata) {
               $id = $sanpham_theo_cata['id_product'];
@@ -141,7 +150,6 @@
               }
             }
             ?>
-          </div>
         </div>
         <nav class="row nav mt-5">
           <a class="nav-link active title py-2 " href="index.php?page=collection&lam-sach">LÀM SẠCH</a>
@@ -163,10 +171,9 @@
         <div class="row">
           <div class="col-2"></div>
           <div class="col-12">
-            <div class="box1">
-              <img src="https://vn.stylekorean.com/data/promotion/promo_mobile_banner_50.jpg" alt="">
+            <div class="box1 bia">
+              <img src="https://merchants.sodexo.ph/app/webroot/img/merchant/The%20Face%20Shop/_banner.jpg" alt="">
             </div>
-            <div class="container">
               <?php
               foreach ($danhsach_catagory as $sanpham_theo_cata) {
                 $id = $sanpham_theo_cata['id_product'];
@@ -189,7 +196,6 @@
                 }
               }
               ?>
-            </div>
           </div>
         </div>
         <nav class="row nav mt-5">
@@ -207,10 +213,9 @@
         <div class="row">
           <div class="col-2"></div>
           <div class="col-12">
-            <div class="box1">
+            <div class="box1 bia">
               <img src="https://file.hstatic.net/1000036599/collection/bannerlamsach.jpg" alt="">
             </div>
-            <div class="container">
               <?php
               foreach ($danhsach_catagory as $sanpham_theo_cata) {
                 $id = $sanpham_theo_cata['id_product'];
@@ -234,7 +239,6 @@
               }
               ?>
             </div>
-          </div>
         <div class="row mt-4">
           <h2>GÓC LÀM ĐẸP</h2>
         </div>

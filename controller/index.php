@@ -6,6 +6,7 @@
     include_once "../model/type.php";
     include_once "../model/collection.php";
     include_once "../model/user.php";
+    include_once "../model/search.php";
 
     // loaddata cho trang chủ
     connect();
@@ -42,12 +43,6 @@
                 $danhsachsp = showsp_theodanhmuc($iddm);
                 include_once "../view/collection.php";
                 break;
-            case 'banchay':
-                include_once "../view/banchay.php";
-                break;
-            case 'sanphammoi':
-                include_once "../view/sanphammoi.php";
-                break;
             case 'chitiet_sp':
                 if (isset($_GET['id_product'])&&($_GET['id_product']>0)) {
                     $id_sanpham=$_GET['id_product'];
@@ -81,6 +76,18 @@
                 }
                 include "../view/dangnhap.php";
                 break;  
+            case 'search':
+                if (isset($_POST['search'])&&($_POST['search'])) {
+                    if(!empty($_POST['tim'])){
+                        $ndtim=$_POST['tim'];
+                        $timkiem = search($ndtim); 
+                        $danhsachsp = search($ndtim);
+                        include_once "../view/search.php";
+                    }else{
+                        echo "<p style='color: red;'>Bạn chưa nhập từ khóa</p>";
+                    } 
+                }
+                break;
             default:
                 include_once "../view/home.php";
                 break;

@@ -56,7 +56,9 @@
                             </div>';
                 }
                 ?>
-
+            <div class="row cmt">
+                <iframe src="binhluan.php?id_product=<?=$_GET['id_product']?>" width="1200px" height="400px" frameborder="0"></iframe>
+            </div>
             </div>
         </div>
     </section>

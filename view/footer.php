@@ -3,21 +3,21 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-3">
-                <img src="img/phone.webp" alt="">
+                <img src="../view/img/phone.webp" alt="">
                 <p>Hotline: 1900 636 510 (Từ 9 - 21h)<p>
             </div>
             <div class="col-3">
-                <img src="img/hotro.png" alt="">
+                <img src="../view/img/hotro.png" alt="">
                 <p>Hỗ Trợ Đơn Hàng: <p>
                 <p>Thegioiskinfood@Gmail.Com</p>
             </div>
             <div class="col-3">
-                <img src="img/lienhe.png" alt="">
+                <img src="../view/img/lienhe.png" alt="">
                 <p>Liên Hệ Hợp Tác: <p>
                 <p>Sales@Thegioiskinfood.Com</p>
             </div>
             <div class="col-3">
-                <img src="img/diachi.png" alt="">
+                <img src="../view/img/diachi.png" alt="">
                 <p>100 Hoàng Hoa Thám, Phường 12, Quận Tân Bình<p>
             </div>
         </div>

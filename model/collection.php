@@ -31,7 +31,7 @@
     }
     function showsp_catagory(){
         $conn = connect();
-        $sql = "select * from product where 1 ORDER BY id_catagory desc limit 10";
+        $sql = "select * from product where 1 ORDER BY id_catagory desc";
 
         $stmt = $conn->prepare($sql);
         $stmt->execute();

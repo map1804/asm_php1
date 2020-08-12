@@ -28,11 +28,11 @@
                         </p>
                     </div>
                     <div class="boxMid">
-                        <form action="#" method="post">
+                        <form action="index.php?page=search" method="post">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Bạn cần tìm gì?..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <input type="text" name="tim" class="form-control" placeholder="Bạn cần tìm gì?..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                                 <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button">Tìm kiếm</button>
+                                    <input type="submit" value="Tìm kiếm" name="search">
                                 </div>
                             </div>
                         </form>
